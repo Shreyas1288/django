@@ -1,0 +1,49 @@
+{%extends "base.html" %}
+{%load static%}
+
+{%block content%}
+
+<div class="container" align="center">
+
+    <h4><b>Enter Details</b>
+    </h4>
+
+    <div class="col-md-5 col-sm-6 col-xs-12">
+
+      <form action="/appointment/success/" style="border:1px solid black;padding:10%;" method=post>
+          {% csrf_token %}
+        <div class="form-group row">
+            <label>Enter Patient Name</label>
+        <input type="text" name="patient" class="form-control" id="inputEmail3" placeholder="Enter Patient name" required>
+
+        </div>
+          <div class="form-group row">
+ <label>Enter Phone number</label>
+            <input type="text" name="phone" class="form-control" placeholder="Enter Phone number" required>
+          </div>
+          <div class="form-group row">
+          <label for="cars">Choose Slot</label>
+          </div>
+ <div class="form-group row">
+<select name="slot" id="cars" style="height:45px;width:100%;" required>
+  <option value="9:00-9:30" name="9:00-9:30">9:00-9:30</option>
+  <option value="9:30-10:00" name="9:30-10:00">9:30-10:00</option>
+    <option value="10:00-10:30" name="10:00-10:30">10:00-10:30</option>
+    <option value="10:30-11:00" name="10:30-11:00">10:30-11:00</option>
+    <option value="11:00-11:30" name="11:00-11:30">11:00-11:30</option>
+</select>
+          </div>
+<input type="hidden" name="t_id" value={{counter}}>
+          <input type="hidden" name="id" value="{{doct_id}}">
+
+          <br>
+        <div class="form-group row">
+
+            <input type="submit" name="Submit" value="Submit" style="width:100%" class="btn btn-primary">
+
+        </div>
+      </form>
+
+</div>
+</div>
+{%endblock%}

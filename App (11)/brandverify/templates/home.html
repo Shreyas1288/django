@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<form action="/products/home1/" method="post">
+    {%csrf_token%}
+    <br><br>
+    <label>Enter Sender name </label>  <input type="text" name="sender" placeholder="Enter Sender name">
+    <br><br>
+    <label>Enter Reciever name </label>  <input type="text" name="reciever" placeholder="Enter Reciever name">
+    <br><br>
+    <label>Enter Amount </label>  <input type="text" name="amount" placeholder="Enter Amount">
+    <br><br>
+    <input type="submit" name="Submit" value="Submit">
+    {{var}}
+</form>
+</body>
+</html>

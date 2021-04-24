@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Qr</title>
+</head> <h1>Qr Generate</h1>
+<body>
+<form action="/mysite/qrgenerate1/" method="post">
+    {% csrf_token %}
+    <br><br>
+Depositor Username:- <input type="text" name="username" placeholder="Depositor Username" required>
+    <br><br>
+File Type:-<input type="text" name="file_type" placeholder="File Type">
+<br><br>
+    <input type="submit" name="Generate Qr" value="Generate Qr">
+</form>
+</body>
+</html>

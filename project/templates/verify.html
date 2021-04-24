@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify</title>
+</head>
+<body>
+<form action="/internship/verify_user/" method="post">
+    {%csrf_token%}
+    <label>Enter OTP (email)</label> <input type="text" name="email" placeholder="Enter Otp recieved in email">
+    <br/>
+    <br/>
+    <label>Enter OTP (phone)</label><input type="text" name="phone" placeholder="Enter Otp recieved in phone">
+<input type="submit" name="Submit" value="Submit">
+</form>
+</body>
+</html>

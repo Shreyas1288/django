@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Page</title>
+    <script type="text/javascript">
+        if(performance.navigation.type == 2)
+        {
+   location.reload(true);
+}
+    </script>
+</head>
+<body>
+<form name="myform" action="/products/register_cust1/" method="post">
+{% csrf_token %}
+    <a href="/products/register_sales/">Are you a SalesPerson</a>
+    <br><br>
+    <label>Enter Name </label><input type="text" name="name" placeholder="Enter name" required><br><br>
+    <label> Enter Email </label>:- <input  type="email" name="email" placeholder="Enter email"><br><br>
+
+    <label>Password</label><input id="pass" type="password" name="password" placeholder="Enter Password" required><br><br>
+    <label>Confirm Password </label> <input id="cpass" type="password" name="confirm" placeholder="Confirm Password" required><br><br>
+
+
+    <br><br>
+    <input type="submit" name="Submit" value="Submit" >
+
+
+    <br>
+</form>
+
+</body>
+</html>

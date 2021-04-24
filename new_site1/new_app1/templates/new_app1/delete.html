@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+Enter username you want to delter
+<form action="/books/details" method="post">
+    {% csrf_token %}
+<input type="text" name="username" placeholder="Enter username">
+<input type="submit" name="submit" value="SUbmit">
+</form>
+</body>
+</html>

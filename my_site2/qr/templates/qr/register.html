@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h1 >Registration Page</h1>
+    <script type="text/javascript">
+
+    function myfunc()
+    {
+var var_1=document.getElementById("var_1").value;
+ var flag=0;
+ var var_2=document.getElementById("var_5").value;
+var var_3=document.getElementById("var_6").value;
+password=document.getElementById("pass").value;
+cpassword=document.getElementById("cpass").value;
+
+ for(var i=0;i<var_1.length;++i)
+ {
+    if(var_1[i]=="@")
+    {  if(var_1[var_1.length-1]!="@")
+
+       flag=1;
+    }
+}
+
+if((var_1=="") || (var_2=="") || (var_3=="") || (password=="") || (cpassword==""))
+{
+
+alert("Please Fill required Fields");
+}
+else if (flag==0)
+{
+alert("Enter valid email id");
+}
+else{
+
+      if(password==cpassword)
+      {
+       document.forms["myform"].submit();
+      }
+      else{
+      alert("Password and Confirm password are not same");
+
+      }
+    }
+    }
+
+
+</script>
+</head>
+
+<body>
+
+
+<form name="myform" action="/mysite/register1/" method="post">
+{% csrf_token %}
+    <br><br>
+   Enter Name/Institute Name:- <input id="var_5" type="text" name="name" placeholder="Enter name" required><br><br>
+    Enter Email:- <input id="var_1" type="email" name="email" placeholder="Enter email"><br><br>
+    Username:- <input id="var_6" type="text" name="username" placeholder="Enter Username" required><br><br>
+    Password:- <input id="pass" type="password" name="password" placeholder="Enter Password" required><br><br>
+    Confirm Password:- <input id="cpass" type="password" name="confirm" placeholder="COnfirm Password" required><br><br>
+
+     Category:- <select id="category" name="category" required><option value="Register as Student">Register as student</option>
+	<option value="Register as College">Register as College</option>
+
+
+</select>
+    <br><br>
+    <input id="add2" type="button" name="Submit" value="Submit" onclick="myfunc()">
+
+
+    <br>
+</form>
+
+</body>
+</html>

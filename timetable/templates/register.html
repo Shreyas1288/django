@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<form action="/institute/register1/" method="post">
+    {%csrf_token%}
+
+    <br><br>
+     <label>Enter Username</label><input type="text" name="username" placeholder="Enter Username" required>
+    <br><br>
+    <label>Enter Password</label><input type="password" name="password" placeholder="Enter Password" required>
+
+        <br><br>
+    <label>Enter Email</label><input type="email" name="email" placeholder="Enter Email" required>
+    <br><br>
+        <br><br>
+    <label>Enter Total Branches(Including Sections)</label><input type="text" name="branches" placeholder="Enter Number of branches (Including Sections)" required>
+    <br><br>
+        <input type="submit" name="Submit" value="Submit">
+
+</form>
+
+</body>
+</html>

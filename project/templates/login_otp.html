@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<form action="/internship/login_verify/" method="post">
+    {%csrf_token%}
+    <br/>
+    <br/>
+    <input type="text" name="otp" placeholder="Enter OTP to verify"/>
+    <br/>
+    <br/>
+    <input type="submit" name="Submit" value="Submit"/>
+</form>
+
+</body>
+</html>

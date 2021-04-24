@@ -1,0 +1,64 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Institute Details</title>
+
+</head>
+<body>
+
+
+<form action="/institute/college_details/" method="post">
+    {%csrf_token%}
+
+  <br><label>Enter name</label><input type="text" name="name" placeholder="Enter Name of Institute" required>
+
+    <br><br>
+<label>Total number of teachers</label><input type="text" name="teachers" placeholder="Enter Number of teachers" required>
+<br><br>
+
+      {%for i in slots%}
+
+    <label>Enter branch name with Section</label>
+    <input type="text" name="branch{{i}}" placeholder="Enter branch name with Section" required>
+<br><br>
+    {% endfor %}
+<br><br>
+
+    <label>College Opening timing</label>
+
+<select name="collegeopen" id="Collegeopen">
+  <option value="09:00AM">9:00 AM</option>
+  <option value="10:00AM">10:00 AM</option>
+  <option value="11:00AM">11:00 AM</option>
+  <option value="12:00NOON">12:00 AM</option>
+    <option value="01:00PM">1:00 PM</option>
+  <option value="02:00PM">2:00 PM</option>
+  <option value="03:00PM">3:00 PM</option>
+  <option value="04:00PM">4:00 PM</option>
+    <option value="05:00PM">5:00 PM</option>
+</select>
+<br><br>
+    <label>College Close timing</label>
+    <select name="collegeclose" id="Collegeclose" required>
+  <option value="09:00AM">9:00 AM</option>
+  <option value="10:00AM">10:00 AM</option>
+  <option value="11:00AM">11:00 AM</option>
+  <option value="12:00NOON">12:00 AM</option>
+    <option value="01:00PM">1:00 PM</option>
+  <option value="02:00PM">2:00 PM</option>
+  <option value="03:00PM">3:00 PM</option>
+  <option value="04:00PM">4:00 PM</option>
+        <option value="05:00PM">5:00 PM</option>
+        </select>
+<br><br>
+    <input type="hidden" name="id" value="{{id}}">
+    <input type="hidden" name="len" value="{{len}}">
+    <input type="submit" name="Submit" value="Submit">
+    <br><br>
+</form>
+<script type="text/javascript" src="{%static 'js/ajax.js'%}"></script>
+
+</body>
+</html>

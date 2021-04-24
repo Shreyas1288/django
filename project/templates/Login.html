@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<form action="/internship/login_user/" method="post">
+    {%csrf_token%}
+    <br/>
+    <br/>
+    <label>Enter Phone Number</label>
+<input type="text" name="phone" placeholder="Enter Phone number">
+<br>
+<br>
+<input type="submit" name="Submit" value="Submit">
+</form>
+</body>
+</html>

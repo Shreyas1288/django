@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Details</title>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+<form action="/institute/success/" method="post">
+    {% csrf_token %}
+<br><br>
+
+
+    <label>Enter Teacher Details:-</label>
+    <br><br><br>
+    {% for j in slot5 %}
+    <label>Enter Teacher Name
+    </label>
+    <input type="text" name="name{{j}}" placeholder="Enter Teacher name">
+    <br><br>
+    <label>Enter Total number of lectures (per week)</label>
+    <input type="text" name="class{{j}}" placeholder="Enter Total number of lectures (per week)"/>
+    <br><br>
+    <label>Problem in Slots</label>
+    <br><br>
+    {%for i in slots%}
+    time{{j}}[]
+    <input type="checkbox" name="time{{j}}[]" value="{{i.1}}"/><label>{{i.0}}</label>&nbsp;&nbsp;&nbsp;&nbsp;
+
+    {%endfor%}
+    <br><br>
+    <label>Please select teaching classes</label>
+    {%for k in slot4 %}
+
+    <input type="checkbox" name="value{{j}}[]" value="{{k.1}}"/><label>{{k.0}}</label>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="hidden" name="checkbox{{k.1}}" value="{{k.2}}"/>
+
+    {% endfor %}
+<br><br><br>
+    {% endfor %}
+    <input type="hidden" name="len_slots" value="{{len_slots}}">
+    <input type="hidden" name="len_teacher" value="{{len_teacher}}">
+    <input type="hidden" name="len_slots4" value="{{len_slots4}}">
+    <input type="hidden" name="id" value="{{id}}">
+<input type="submit" name="Submit" value="Submit">
+    sethi{{id}}
+</form>
+</body>
+</html>
